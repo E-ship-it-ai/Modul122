@@ -1,0 +1,1 @@
+Instructions on how this extension works are in the User manuall on github
