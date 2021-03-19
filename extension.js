@@ -1,20 +1,25 @@
 const vscode = require('vscode');
 
-// The closevs function get's called upon closing Visual studio
-function closevs() {
+function activate() {
+	console.log('hurenshoh');
+}
+
+// The deactivate function get's called upon closing Visual studio
+function deactivate() {
+	console.log ("Hello world");
 	//Establishing constants to Import Shell,the current Direcotry and the File system library
 	const fileSystem = require('fs');
 	const { exec } = require('child_process');
 	const This_Directory  = vscode.workspace.workspaceFolders[0].uri.fsPath;
-	
+	 
 	// Looks if the currently worked on folder was opened in Visual studio code
 	if(vscode.workspace.workspaceFolders !== undefined) {
-
+		
 		// Searches for a gitignore file in the directory
 		if(fileSystem.existsSync(This_Directory + '/.gitignore')){
-
+ 
 			// Checks the Status of the current GIT repository
-			exec('git status', {cwd: This_Directory}, function(err, stdout, stderr) {
+			exec('git status', {cwd: This_Directory}, function(err, stdout, sass) {
 				// Version for future count of sucessfull pushes
 				let version = 0;
 				var datetime = new Date().toLocaleString();
@@ -38,5 +43,6 @@ function closevs() {
 }
 
 module.exports = {
-	closevs
+	activate,
+	deactivate
 }
