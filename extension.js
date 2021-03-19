@@ -1,12 +1,7 @@
 const vscode = require('vscode');
 
-function activate() {
-	console.log('hurenshoh');
-}
-
 // The deactivate function get's called upon closing Visual studio
 function deactivate() {
-	console.log ("Hello world");
 	//Establishing constants to Import Shell,the current Direcotry and the File system library
 	const fileSystem = require('fs');
 	const { exec } = require('child_process');
@@ -43,6 +38,5 @@ function deactivate() {
 }
 
 module.exports = {
-	activate,
 	deactivate
 }
