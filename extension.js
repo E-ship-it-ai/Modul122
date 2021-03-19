@@ -21,7 +21,6 @@ function closevs() {
 				 version = version + 1;
 				//Looks if the repro is up to date
 				if(!stdout.includes('up to date')) {
-				
 				// Commits the repository and adds the current datetime as a message 
 				exec('git commit -m "'+ datetime +'"', {cwd: This_Directory});
 				//Pushes the changes to GIThub
